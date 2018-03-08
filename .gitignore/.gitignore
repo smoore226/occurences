@@ -1,0 +1,66 @@
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<string>
+#include<vector>
+#include<thread>
+using namespace std;
+
+
+int howMany(const vector<int>& values, int userinput) {
+	int count = 0;
+	for (int i = 0; i< values.size(); i++) {
+		if (values[i] == userinput) count++;
+	}
+	return count;
+}
+
+void initValues(vector<int>& values)
+{
+	for (int counter = 0; counter < values.size(); counter++)
+	{
+		values[counter] = counter;
+	}
+
+}
+
+
+int main()
+{
+	int userInput = 1;
+	vector<int> values(101);
+	initValues(values);
+	cout << endl;
+	cout << values[100] << endl;
+	cout << "Please enter an Integer: " << endl;
+	while (userInput != 0)
+	{
+		cout << "= ";
+		cin >> userInput;
+		//cout << howMany(values, userInput);
+		cout << userInput;
+
+	}
+	cout << howMany(values, userInput);
+	cout << endl;
+
+
+
+	/*for (int counter = 0; counter < 10; counter++)
+	{
+		cout << counter << endl;
+		this_thread::sleep_for(chrono::seconds(1));
+	}*/
+	
+	/*while (userInput != 0)
+	{
+		vector<int> vector = howMany(values, userInput);
+		cout << "value\thowMany";
+		for (int i = 0; i<upperBound; i++) {
+			cout << i << '\t' << howMany(vector, i) << endl;
+		}
+	}*/
+
+
+
+}
